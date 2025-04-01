@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0423c, #bdc3c7); /* Classic Navy to Silver */
+}
+.login-container {
+    position: relative;
+    width: 400px;
+    height: 70px;
+    padding: 20px;
+    background: #f8f9fa; /* Soft White */
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    transition: height 0.5s ease, padding 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.border-box {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: calc(95% + 8px);
+    height: calc(95% + 8px);
+    border-radius: 15px;
+    background: transparent;
+    z-index: -1;
+}
+.border-box::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 10px;
+    background: conic-gradient(#cdaa7d, #2c3e50, #cdaa7d, #2c3e50); /* Gold & Navy */
+    box-shadow: 0 0 20px #cdaa7d, 0 0 20px #2c3e50;
+    animation: border-rotate 3s linear infinite;
+    left: -10px;
+}
+@keyframes border-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.border-box::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    background:rgb(255, 255, 255);
+    border-radius: 15px;
+}
+.login-header {
+    color:rgba(255, 255, 255, 0.84); /* Deep Navy */
+    font-size: 22px;
+    transition: opacity 0.5s ease;
+    margin-bottom: 150px;
+}
+.login-header span {
+    color: #cdaa7d; /* Classic Gold */
+}
+.hidden-content {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+.input-box {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background: #ecf0f1; /* Light Gray */
+    color: #2c3e50; /* Navy */
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid #cdaa7d; /* Gold */
+}
+.input-box::placeholder {
+    color: #999;
+}
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #2c3e50, #cdaa7d); /* Navy to Gold */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 15px #cdaa7d, 0 0 20px #2c3e50;
+    transition: 0.3s;
+}
+.login-btn:hover {
+    background: linear-gradient(135deg, #cdaa7d, #2c3e50);
+    box-shadow: 0 0 25px #cdaa7d, 0 0 30px #2c3e50;
+}
+.login-footer {
+display: flex;
+justify-content: center; /* Centers the content */
+margin-top: 20px; /* Increased margin from the top */
+font-size: 14px;
+color: #2c3e50; /* Navy */
+gap: 10px; /* Adds spacing between items */
+}
+
+.login-footer a {
+text-decoration: none;
+color: #cdaa7d; /* Gold */
+transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+color: #2c3e50; /* Navy */
+}
+
+
+
+/* Hover effect to expand the box */
+.login-container:hover {
+    height: 300px;
+    padding: 30px;
+}
+.login-container:hover .hidden-content {
+    opacity: 1;
+    height: auto;
+}
+.form-header {
+margin-top: 10px; 
+margin-bottom: 20px; 
+transition: all 0.3s ease-in-out;
+}
+
+
